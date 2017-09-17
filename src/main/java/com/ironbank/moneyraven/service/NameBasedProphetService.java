@@ -1,5 +1,7 @@
 package com.ironbank.moneyraven.service;
 
+import com.ironbank.moneyraven.MoneyRavenApplication;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.concurrent.ThreadLocalRandom;
@@ -9,6 +11,7 @@ import java.util.concurrent.ThreadLocalRandom;
  * @since 8/20/2017
  */
 @Service
+@Profile(MoneyRavenApplication.ЗИМА_БЛИЗКО)
 public class NameBasedProphetService implements ProphetService {
 
   @Override
