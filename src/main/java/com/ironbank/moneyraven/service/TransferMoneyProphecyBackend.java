@@ -19,14 +19,15 @@ public class TransferMoneyProphecyBackend implements TransferMoneyService {
   private final ProphetService prophet;
 
   @Override
-  public void transfer(String addresseeName, long amount) {
+  public long transfer(String addresseeName, long amount) {
     Bank bank = moneyDao.findAll().get(0);
 
     if (bank.getTotalAmount() > amount && prophet.willSurvive(addresseeName)) {
       bank.credit(amount);
-      moneyDao.save(bank);
+      return moneyDao.save(bank).getTotalAmount();
     }
 
+    return -1;
   }
 
 }

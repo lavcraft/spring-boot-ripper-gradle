@@ -6,6 +6,6 @@ package com.ironbank.moneyraven.service;
  */
 public interface TransferMoneyService {
 
-  void transfer(String addresseeName, long amount);
+  long transfer(String addresseeName, long amount);
 
 }

@@ -19,8 +19,11 @@ public class IronBankController {
 
   @GetMapping("/credit")
   public String credit(@RequestParam String name, @RequestParam long amount) {
-    transferMoney.transfer(name, amount);
-    return "ACCEPTED";
+    long resultedDeposit = transferMoney.transfer(name, amount);
+    if (resultedDeposit == -1) {
+      return "Rejected\nYou will`t survive this winter";
+    }
+    return String.format("Accepted\nCurrent deposit: %s", resultedDeposit);
   }
 
   @GetMapping("/state")
