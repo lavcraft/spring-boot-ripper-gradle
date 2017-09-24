@@ -1,7 +1,7 @@
 package com.ironbank.rules;
 
+import com.ironbank.rules.annotation.ConditionalOnProduction;
 import com.ironbank.rules.annotation.RavenCondition;
-import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -14,7 +14,8 @@ public class IronBankConfiguration {
 
   @Bean
   @RavenCondition
-  public ApplicationListener applicationListener() {
+  @ConditionalOnProduction
+  public IronBankApplicationListener applicationListener() {
     return new IronBankApplicationListener();
   }
 
