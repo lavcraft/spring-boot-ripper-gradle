@@ -4,9 +4,7 @@ import org.springframework.context.annotation.Condition;
 import org.springframework.context.annotation.ConditionContext;
 import org.springframework.core.type.AnnotatedTypeMetadata;
 
-import javax.swing.*;
-
-import static javax.swing.JOptionPane.*;
+import static javax.swing.JOptionPane.showConfirmDialog;
 
 public class ProdCondition implements Condition {
     @Override
