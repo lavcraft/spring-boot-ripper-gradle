@@ -1,3 +1,5 @@
 org.springframework.boot.context.properties.EnableConfigurationProperties=com.ironbank.moneyraven.starter.IronConfiguration
 
 org.springframework.context.ApplicationContextInitializer=com.ironbank.moneyraven.starter.ProfileCheckAppInitializer
+
+org.springframework.boot.env.EnvironmentPostProcessor=com.ironbank.moneyraven.starter.ResolveProfileEnvironmentPostProcessor
