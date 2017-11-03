@@ -12,8 +12,8 @@ buildscript {
 }
 
 allprojects {
-  apply plugin:'java'
-  apply plugin:'io.spring.dependency-management'
+  apply plugin: 'java'
+  apply plugin: 'io.spring.dependency-management'
 
   sourceCompatibility = 1.8
 
@@ -37,7 +37,7 @@ allprojects {
 }
 
 configure(rootProject) {
-  apply plugin:'org.springframework.boot'
+  apply plugin: 'org.springframework.boot'
 
   dependencies {
     compile 'org.springframework.boot:spring-boot-starter'
@@ -50,14 +50,18 @@ configure(rootProject) {
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'org.flywaydb:flyway-core'
 
-    compile project(':iron-starter')
-
     runtime 'com.h2database:h2'
 
     compileOnly 'org.projectlombok:lombok'
     compileOnly 'org.springframework.boot:spring-boot-configuration-processor'
 
     testCompile 'org.springframework.boot:spring-boot-starter-test'
+  }
+}
+
+subprojects {
+  dependencies {
+    compile 'org.springframework.boot:spring-boot-starter'
   }
 }
 
