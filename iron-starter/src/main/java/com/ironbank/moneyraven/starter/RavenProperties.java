@@ -12,5 +12,6 @@ import java.util.List;
 @Data
 @ConfigurationProperties("ворон")
 public class RavenProperties {
+  boolean вкл;
   List<String> кудаЛететь;
 }
