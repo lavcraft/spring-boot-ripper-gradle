@@ -14,9 +14,7 @@ public class MoneyRavenApplication {
 
   @Bean
   public ApplicationListener ironListener() {
-    return (event -> {
-      System.out.println("event = " + event);
-    });
+    return (event -> System.out.println("event = " + event));
   }
 
   public static void main(String[] args) {
