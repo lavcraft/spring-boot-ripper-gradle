@@ -11,7 +11,6 @@ import java.util.concurrent.ThreadLocalRandom;
  * @since 8/20/2017
  */
 @Service
-@Profile(MoneyRavenApplication.ЗИМА_БЛИЗКО)
 public class NameBasedProphetService implements ProphetService {
 
   @Override
