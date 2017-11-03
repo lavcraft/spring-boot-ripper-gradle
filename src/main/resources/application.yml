@@ -1,9 +1,6 @@
 spring:
   application.name: money-raven
   jpa.hibernate.ddl-auto: validate
-  h2.console.enabled: true
-
-management.security.enabled: false
 
 ironbank:
   те-кто-возвращают-долги:
