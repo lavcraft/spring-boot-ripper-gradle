@@ -22,6 +22,7 @@ public class IronConfiguration {
   @Bean
   @ConditionalOnProduction
   @ConditionalOnRaven
+  @ConditionalOnMissingBean
   public IronListener ironListener(RavenProperties r) {
     return new IronListener(r);
   }
