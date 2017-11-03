@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 public class IronConfiguration {
 
   @Bean
+  @ConditionalOnProduction
   public IronListener ironListener() {
     return new IronListener();
   }
