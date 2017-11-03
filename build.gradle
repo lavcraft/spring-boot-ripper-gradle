@@ -50,6 +50,7 @@ configure(rootProject) {
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'org.flywaydb:flyway-core'
 
+    compile project(':iron-starter')
     runtime 'com.h2database:h2'
 
     compileOnly 'org.projectlombok:lombok'
