@@ -1,6 +1,6 @@
 package com.ironbank.moneyraven;
 
-import com.ironbank.moneyraven.configuration.ProphetProperties;
+import com.ironbank.moneyraven.model.ProphetProperties;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
