@@ -1,4 +1,4 @@
-package com.ironbank.moneyraven.configuration;
+package com.ironbank.moneyraven.model;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
