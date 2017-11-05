@@ -23,7 +23,7 @@ public class IronBankController {
   public String credit(@RequestParam String name, @RequestParam long amount) {
     long resultedDeposit = transferMoney.transfer(name, amount);
     if (resultedDeposit == -1) {
-      return "Rejected<br/>" + name + " <b>will`t</b> survive this winter";
+      return "Rejected<br/>" + name + " <b>will not</b> survive this winter";
     }
     return format(
         "<i>Credit approved for %s</i> <br/>Current  bank balance: <b>%s</b>",
