@@ -1,10 +1,9 @@
 buildscript {
   ext {
-    springBootVersion = '1.5.7.RELEASE'
-    springCloudVersion = 'Dalston.SR2'
+    springBootVersion = '1.5.10.RELEASE'
   }
   repositories {
-    jcenter()
+    mavenCentral()
   }
   dependencies {
     classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -18,12 +17,11 @@ allprojects {
   sourceCompatibility = 1.8
 
   repositories {
-    jcenter()
+    mavenCentral()
   }
 
   dependencyManagement {
     imports {
-      mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
       mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
     }
     dependencies {
@@ -50,6 +48,8 @@ configure(rootProject) {
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'org.flywaydb:flyway-core'
 
+    compile project(':iron-starter')
+
     runtime 'com.h2database:h2'
 
     compileOnly 'org.projectlombok:lombok'
@@ -62,9 +62,14 @@ configure(rootProject) {
 subprojects {
   dependencies {
     compile 'org.springframework.boot:spring-boot-starter'
+    compileOnly 'org.springframework.boot:spring-boot-configuration-processor'
   }
 }
 
-springBoot {
-  executable = true
+test {
+  systemProperty "java.awt.headless", false
 }
+
+//bootJar {
+//  launchScript()
+//}s
